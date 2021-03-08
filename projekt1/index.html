@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+<head>
+<meta charset="UTF-8"/>
+<title id="title">Ciąg Fibonacciego</title>
+<link rel="stylesheet" href="index.css" type="text/css"/>
+<script src="index.js"></script>
+</head>
+<body>
+<header>
+		<p>CIĄG FIBONACCIEGO</p>
+</header>
+<nav>
+	<button onclick="showInfo()"  class="btn" id="infoBtn">Info</button>
+	<button onclick="showFacts()" class="btn" id="factsBtn">Ciekawostki</button>
+</nav>
+<article id="info">
+	<h4>Podstawowe informacje</h4>
+	<p>Ciąg Fibonacciego jest zdefiniowany w następujący sposób: </p>
+<pre>
+	F<sub>1</sub> = 1,
+	F<sub>2</sub> = 1,
+	F<sub>i</sub> = F<sub>i-1</sub> + F<sub>i-2</sub>, i > 2 
+	
+	F: 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144,...
+</pre>
+	<p>Złota liczba</p>
+	<pre>
+	Granica ciągu:
+	<img src="granica.png" alt="Wzór na granicę ciągu">
+	Czyli dzieląc każdą kolejną liczbę Fibonacciego przez poprzednią otrzymujemy złotą proporcję.
+	
+	</pre>
+	<p>Związek z trójkątem Pascala</p>
+	<pre>
+	<img src="pascal.png" alt="Trójkąt Pascala">
+	Obrazek ze strony <a href="https://beder.pl/java/firecode-io/better-fibonacci/">https://beder.pl/java/firecode-io/better-fibonacci/</a>.
+	</pre>
+</article>
+<article id="facts">
+	<h4>Sumy kwadratów kolejnych liczb Fibonacciego</h4>
+	<p> Co się stanie, gdy podniesiemy do kwadratu kolejne elementy ciągu? </p> 
+	<pre>	
+	F: 1, 1, 2, 3, 5, 8, 13, 21 
+	F<sup>2</sup>: 1, 1, 4, 9, 25, 64, 169
+	Okazuje się, że zachodzi ciekawa zależność:
+		F<sup>2</sup><sub>1</sub> + F<sup>2</sup><sub>2</sub> = F<sub>3</sub>
+		F<sup>2</sup><sub>2</sub> + F<sup>2</sup><sub>3</sub> = F<sub>5</sub>
+		F<sup>2</sup><sub>3</sub> + F<sup>2</sup><sub>4</sub> = F<sub>7</sub>
+	Następnie dodając więcej kolejnych wyrazów otrzymujemy:
+	1 + 1 + 4 = 6 = 2 x 3
+	1 + 1 + 4 + 9 = 15 = 3 x 5
+	1 + 1 + 4 + 9 + 25 = 40 = 5 x 8
+	1 + 1 + 4 + 9 + 25 + 64 = 104 = 8 x 13
+	...
+	</pre>
+
+	<p>Wytłumaczenie:</p>
+	<section>
+	<h4>Wizualizacja</h4>
+	<label for="quantity">Ilość liczb Fibonacciego:</label>
+	<input type="number" id="quantity" name="quantity" min="2" max="10">
+	<button onclick="animateFib()">Start</button>
+	<button onclick="resetFib()">Reset</button>
+
+	<canvas id='canvas' width='650' height='600'>
+  		 Canvas not supported
+	</canvas>
+	</section>
+</article>
+<footer>
+	TI 2020 Olga Kubiszyn
+</footer>
+</body>
+</html>
